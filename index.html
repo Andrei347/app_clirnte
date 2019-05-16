@@ -41,11 +41,8 @@
                 <div class="card-body">
                     <h2>{{sesiones.title}}</h2>
                     <p class="card-text">{{sesiones.description}}</p>
-                    <p>Categoria: {{sesiones.category_id}}</p>
-                    <p>Creado por: {{sesiones.user_id}} a las {{sesiones.updated_at}} <span>Estado: {{sesiones.state}}</span></p>
-
                 </div>
-                <button v-on:click="showmoreid(4)" v-bind:key='sesiones.id' type="button" class="btn btn-danger w-50 m-auto">Mas</button>
+                <button v-on:click="showmoreid({{sesiones.id}})" type="button" class="btn btn-danger w-50 m-auto">Mas</button>
             </div>
     </section>
 
