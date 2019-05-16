@@ -15,7 +15,7 @@
 <header class="row m-0 p-0">
     <div class="container-fluid m-0 p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
-            <a class="navbar-brand" href="#"><i class="fas fa-home color-white"></i></a>
+            <a class="navbar-brand" href="/#"><i class="fas fa-home color-white"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,18 +34,18 @@
 <main id="app" class="row m-0 p-0">
 
     <section class="container-fluid m-0 p-0">
-            <div v-for="(title) in todo" class="card" style="width: 100%;">
+            <div v-for="(sesiones) in todo" class="card mb-3 pb-3" style="width: 100%;">
                 <div class="text-center">
                     <img class="w-100" src="img/512x512bb.jpg" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h2></h2>
-                    <p class="card-text">{{title}}</p>
-                    <p>Categoria: </p>
-                    <p>Creado por:  a las  <span>Estado:</span></p>
+                    <h2>{{sesiones.title}}</h2>
+                    <p class="card-text">{{sesiones.description}}</p>
+                    <p>Categoria: {{sesiones.category_id}}</p>
+                    <p>Creado por: {{sesiones.user_id}} a las {{sesiones.updated_at}} <span>Estado: {{sesiones.state}}</span></p>
 
                 </div>
-                <button v-on:click="showmoreid" type="button" class="btn btn-danger w-50 m-auto">Mas</button>
+                <button v-on:click="showmoreid(4)" v-bind:key='sesiones.id' type="button" class="btn btn-danger w-50 m-auto">Mas</button>
             </div>
     </section>
 
