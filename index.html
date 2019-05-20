@@ -22,10 +22,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home</a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link" href="#">Disabled</a>
+                    <a class="nav-item nav-link active" href="#">Inicio</a>
+                    <a class="nav-item nav-link" href="#">Crear</a>
+                    <a class="nav-item nav-link" href="#">Editar</a>
+                    <a class="nav-item nav-link" href="#">Salir</a>
                 </div>
             </div>
         </nav>
@@ -42,7 +42,7 @@
                     <h2>{{sesiones.title}}</h2>
                     <p class="card-text">{{sesiones.description}}</p>
                 </div>
-                <button v-on:click="showmoreid({{sesiones.id}})" type="button" class="btn btn-danger w-50 m-auto">Mas</button>
+                <button v-on:click="showmoreid('{{sesiones.id}}')" type="button" class="btn btn-danger w-50 m-auto">Mas</button>
             </div>
     </section>
 
