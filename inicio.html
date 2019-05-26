@@ -33,48 +33,19 @@
 </header>
 <main id="app" class="row m-0 p-0">
 
-    <div class="container-fluid">
-        <form>
-            <div class="form-group">
-                <label for="title"></label>
-                <input type="text" class="form-control" id="title" v-model="title" placeholder="Title">
+    <section class="container-fluid m-0 p-0">
+            <div v-for="(sesiones) in todo" class="card mb-3 pb-3" style="width: 100%;">
+                <div class="text-center">
+                    <img class="w-100" src="img/512x512bb.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h2>{{sesiones.title}}</h2>
+                    <p class="card-text">{{sesiones.description}}</p>
+                </div>
+                <button v-on:click="showmoreid(sesiones.id)" type="button" class="btn btn-danger w-50 m-auto">Mas</button>
             </div>
-            <div class="form-group">
-                <label for="description"></label>
-                <textarea type="text" class="form-control" id="description" v-model="description" placeholder="Description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="cat">Categoria</label>
-                <select id="cat" v-model="category_id" class="form-control">
-                    <option selected>Selecciona una</option>
-                    <option>Informatica</option>
-                    <option>Construccion</option>
-                    <option>Hosteleria</option>
-                    <option>Cosmetica y Belleza</option>
-                </select>
-            </div>
-            <p>Estado:</p>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="state1" v-model="state" value="pending">
-                <label class="form-check-label" for="state1">Disponible</label>
-            </div>
-            <p></p>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="state2" v-model="state" value="pending">
-                <label class="form-check-label" for="state2">Cerado</label>
-            </div>
-            <p></p>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Imagen</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <p></p>
-            <p></p>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary w-100 m-auto">Crear</button>
-        </form>
-    </div>
+    </section>
+
 </main>
 <footer>
 

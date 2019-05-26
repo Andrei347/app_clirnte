@@ -4,60 +4,55 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fuente.css">
 
     <title>Hello, world!</title>
 </head>
 <body>
-<header class="row m-0 p-0">
-    <div class="container-fluid m-0 p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
-            <a class="navbar-brand" href="/#"><i class="fas fa-home color-white"></i></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Inicio</a>
-                    <a class="nav-item nav-link" href="#">Crear</a>
-                    <a class="nav-item nav-link" href="#">Editar</a>
-                    <a class="nav-item nav-link" href="#">Salir</a>
-                </div>
-            </div>
-        </nav>
-    </div>
+<header class="row m-4 p-3">
 </header>
-<main id="app" class="row m-0 p-0">
+<main id="app" class="row m-0 pt-5">
 
-    <section class="container-fluid m-0 p-0">
-            <div v-for="(sesiones) in todo" class="card mb-3 pb-3" style="width: 100%;">
-                <div class="text-center">
-                    <img class="w-100" src="img/512x512bb.jpg" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h2>{{sesiones.title}}</h2>
-                    <p class="card-text">{{sesiones.description}}</p>
-                </div>
-                <button v-on:click="showmoreid('{{sesiones.id}}')" type="button" class="btn btn-danger w-50 m-auto">Mas</button>
+    <div class="container-fluid mt-4">
+        <h3>Bienvenido</h3>
+
+            <div class="form-group">
+                <label for="username"></label>
+                <input type="email" class="form-control" id="username" v-model="username" placeholder="Email">
             </div>
-    </section>
+            <div class="form-group">
+                <label for="password"></label>
+                <input type="password" class="form-control" id="password" v-model="password" placeholder="Contraseña">
+            </div>
+            <div class="row">
+                <div class="col-8"><a href="#">Holvide la contraseña</a></div>
+                <div class="col-4"><a href="#">Registrate</a></div>
+            </div>
+            <br>
+            <button v-on:click="sesion()" class="btn btn-primary w-100 m-auto">Entrar</button>
 
+    </div>
 </main>
-<footer>
 
-</footer>
 <!--Vue-->
 <script src="js/vue.js"></script>
 <script src="js/axios.min.js"></script>
 <script src="js/codigo.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 </html>
